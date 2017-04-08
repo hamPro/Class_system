@@ -1,0 +1,16 @@
+{
+  "name": "mission4",
+  "version": "1.0.0",
+  "description": "미션 4. 온도 측정 데이터 저장하기 === ## 1. 과제 목표  1. 라즈베리파이에 ds18b20 온도센서를 연결하여, 실시간으로 온도를 측정한다. 2. 측정한 온도 데이터를 ThingSpeak에 전달하여, 그래프로 표현한다. 3. 온도 데이터를 받을 Node js 웹서버를 구축한다. 4. 웹서버는 온도 데이터를 Mysql DB, Text File에 저장한다.",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.15.2",
+    "mysql": "^2.13.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
