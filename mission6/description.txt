@@ -1,0 +1,8 @@
+mysql 접속 : mysql -u root -p
+
+INSERT INTO sensors SET seq = '10', device = "102", unit = "0", type = "T", value = "30.350", ip = "myip";
+
+SELECT * FROM sensors;    
+
+MySQL 5.7 Reference Manual
+  - https://dev.mysql.com/doc/refman/5.7/en/

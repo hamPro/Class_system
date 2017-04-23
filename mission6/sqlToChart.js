@@ -7,9 +7,8 @@ var df = require('dataformat');
 mysql = require('mysql'); 
 var connection = mysql.createConnection({ 
 	host: 'localhost',
-	port: '3000',
  	user: 'sensor', 
-	password: '123', 
+	password: '12345678', 
  	database: 'data' 
 }) 
 connection.connect(); 
@@ -68,7 +67,7 @@ function do_get_post(cmd, r, req, res)
 
 	  
 // server:3000/logone 에 GET 방식으로 접속하면 파라미터 값을 받아서 mysql에 넣는 작업을 수행하고 
-// log.txt 파일에 데이터를 저장하는 작업 또한 수행합니다 
+// temlog.txt 파일에 데이터를 저장하는 작업 또한 수행합니다 
 app.get('/logone', function(req, res){ 
  	var i = 0; 
  	i++; 
@@ -93,7 +92,7 @@ app.get('/logone', function(req, res){
 
 	     
 	var date = new Date(); 
-	fs.appendFile("log.txt",JSON.stringify(req.query) +", "+req.ip+", "+ date +"\n" ,function(err){ 
+	fs.appendFile("temlog.txt",JSON.stringify(req.query) +", "+req.ip+", "+ date +"\n" ,function(err){ 
 		if(err){ 
 			return console.log(err); 
  		} 
@@ -108,7 +107,7 @@ app.get('/logone', function(req, res){
 // localhost:3000/graph에 접속하면 googleChartSample.html에서 구글차트 템플릿을 읽어와 mysql의 데이터를 입력받아 뿌려줍니다 
 app.get('/graph', function(req, res){ 
  	// 해당 템플릿 파일을 읽어온다 
- 	var html = fs.readFile("/home/pi/class/mission6/googleChart.html", function (err, html) { 
+ 	var html = fs.readFile("/home/star/Desktop/class/mission6/googleChart.html", function (err, html) { 
  		html = " "+ html 
 	        
 		// mysql로부터 데이터를 읽어온다 

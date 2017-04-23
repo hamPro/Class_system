@@ -2,7 +2,7 @@ import os
 import time 
 import urllib 
 import json 
-import httplib 
+import http.client 
 import requests 
  
  
@@ -52,12 +52,12 @@ def thermometer():
         
         try: 
             # nodejs에 온도데이터를 지속적으로 요청해서 mysql에 데이터를 삽입한다 
-            print "[+] Node.js" 
+            print ("[+] Node.js") 
             r = requests.get('http://localhost:3000/logone', params={'temp':temp}) 
-            print r.status_code 
+            print (r.status_code) 
 	 
         except: 
-            print "connection failed" 
+            print ("connection failed") 
         break 
  
 	  
